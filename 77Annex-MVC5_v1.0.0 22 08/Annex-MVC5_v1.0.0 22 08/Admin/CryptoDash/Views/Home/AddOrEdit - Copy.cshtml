@@ -1,0 +1,210 @@
+﻿@model BusinessLibrary.Table.cls_x_CustInq_First_Step_Disp
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm("AddOrEdit", "Home", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.TrnNo)
+
+    <div class="general-label">
+        <div class="form-group row">
+            <div class="form-group m-l-10">
+                <label for="example-search-input" class="col-sm-1 col-form-label">Trn.No</label>
+                <input type="password" class="form-control ml-1" id="exampleInputPassword2">
+            </div>
+            <div class="form-group ml-1">
+                <label for="example-search-input" class="col-sm-1 col-form-label">Date</label>
+                <div class="col-sm-11">
+                    <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+                </div>
+            </div>
+
+            @*<div class="form-group row">
+                <label for="example-date-input" class="col-sm-2 col-form-label">Date</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+                </div>
+            </div>*@
+
+            <div class="form-group ml-1">
+                <label for="example-search-input" class="col-sm-1 col-form-label">Customer</label>
+                <input type="password" class="form-control ml-1" id="exampleInputPassword2">
+            </div>
+            <div class="form-group ml-1">
+                <label for="example-search-input" class="col-sm-1 col-form-label">&nbsp;</label>
+                <button type="button" class="form-control ml-1">Add Customer</button>
+            </div>
+            <div class="form-group ml-1">
+                <label for="example-search-input" class="col-sm-1 col-form-label">&nbsp;</label>
+                <button type="button" class="form-control ml-1">Quote Link</button>
+            </div>
+
+            <div class="form-group ml-1">
+                <label class="col-sm-2 col-form-label">Language</label>
+                <div class="col-sm-10">
+                    <select class="form-control">
+                        <option>English</option>
+                        <option>Simplified Chinese</option>
+                        <option>Traditional Chinese</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="form-group m-l-10">
+                <label class="col-sm-12 col-form-label">Sales Person</label>
+                <div class="col-sm-12">
+                    <select class="form-control">
+                        <option>Elena</option>
+                        <option>Rose</option>
+                        <option>CECI</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group m-l-10">
+                <label for="example-search-input" class="col-sm-1 col-form-label">Owner</label>
+                <input type="password" class="form-control ml-1" id="exampleInputPassword2">
+            </div>
+            <div class="form-group ml-12">
+                <label class="col-sm-10 col-form-label">Currency</label>
+                <div class="col-sm-12">
+                    <select class="form-control">
+                        <option>RMB</option>
+                        <option>NTD</option>
+                        <option>EUR</option>
+                        <option>HKD</option>
+                        <option>INR</option>
+                        <option>JPY</option>
+                        <option>THB</option>
+                        <option>USD</option>
+                    </select>
+                </div>
+            </div>
+ 
+            <div class="form-group m-l-10">
+                <label for="example-search-input" class="col-sm-1 col-form-label">Conversion</label>
+                <input type="password" class="form-control ml-1" id="exampleInputPassword2">
+            </div>
+
+
+            <div class="form-group ml-1">
+                <label for="example-search-input" class="col-sm-1 col-form-label">&nbsp;</label>
+                <button type="button" class="form-control ml-1">Currency Rate Table</button>
+            </div>
+
+            <div class="form-group ml-10">
+                <label for="example-search-input" class="col-sm-10 col-form-label">Project #</label>
+                <input type="password" class="form-control ml-1" id="exampleInputPassword2">
+            </div>
+
+
+        </div>
+
+
+
+        <div class="form-group row">
+
+            <div class="form-group ml-1">
+                <label for="example-search-input" class="col-sm-12 col-form-label">Quotation Status</label>
+                <label for="example-search-input" class="col-sm-1 col-form-label">&nbsp;</label>
+            </div>
+           
+        
+
+            @*<div class="form-group m-l-10">
+                <label for="example-search-input" class="col-sm-1 col-form-label">Sign Back Date</label>
+                <input type="password" class="form-control ml-1" id="exampleInputPassword2">
+            </div>*@
+
+            <div class="form-group ml-1">
+                <label for="example-search-input" class="col-sm-12 col-form-label">Sign Back Date</label>
+                <div class="col-sm-11">
+                    <input class="form-control" type="date" value="2020-05-16" id="example-date-input">
+                </div>
+            </div>
+
+            <div class="form-group ml-1">
+                <label for="example-search-input" class="col-sm-11 col-form-label">Closed Date</label>
+                <div class="col-sm-11">
+                    <input class="form-control" type="date" value="2011-05-17" id="example-date-input">
+                </div>
+            </div>
+
+            <div class="form-group m-l-30">
+                <label for="example-search-input" class="col-sm-11 col-form-label">Reason/Remark</label>
+                <input type="text" class="form-control ml-1-20" id="exampleInputPassword2">
+            </div>
+
+            <div class="custom-control custom-checkbox">
+
+                <input type="checkbox" class="custom-control-input" checked="" id="customCheck3" data-parsley-multiple="groups" data-parsley-mincheck="2">
+                <label class="custom-control-label" for="customCheck3">Opened</label>
+
+            </div>
+
+            @*<div class="form-group m-l-10">
+                <label class="col-sm-12 col-form-label">Sales Person</label>
+                <div class="col-sm-12">
+                    <select class="form-control">
+                        <option>Elena</option>
+                        <option>Rose</option>
+                        <option>CECI</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group m-l-10">
+                <label for="example-search-input" class="col-sm-1 col-form-label">Owner</label>
+                <input type="password" class="form-control ml-1" id="exampleInputPassword2">
+            </div>
+            <div class="form-group ml-12">
+                <label class="col-sm-10 col-form-label">Currency</label>
+                <div class="col-sm-12">
+                    <select class="form-control">
+                        <option>RMB</option>
+                        <option>NTD</option>
+                        <option>EUR</option>
+                        <option>HKD</option>
+                        <option>INR</option>
+                        <option>JPY</option>
+                        <option>THB</option>
+                        <option>USD</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group m-l-10">
+                <label for="example-search-input" class="col-sm-1 col-form-label">Conversion</label>
+                <input type="password" class="form-control ml-1" id="exampleInputPassword2">
+            </div>
+
+
+            <div class="form-group ml-1">
+                <label for="example-search-input" class="col-sm-1 col-form-label">&nbsp;</label>
+                <button type="button" class="form-control ml-1">Currency Rate Table</button>
+            </div>
+
+            <div class="form-group ml-10">
+                <label for="example-search-input" class="col-sm-10 col-form-label">Project #</label>
+                <input type="password" class="form-control ml-1" id="exampleInputPassword2">
+            </div>*@
+
+
+        </div>
+    </div>
+
+
+    @*<div class="form-group">
+        @Html.LabelFor(model => model.P_Name, new { @class = "control-label" })
+        @Html.EditorFor(model => model.P_Name, new { htmlAttributes = new { @class = "form-control" } })
+    </div>*@
+
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-primary" />
+            <input type="reset" value="Reset" class="btn btn-outline-warning" />
+        </div>
+
+}

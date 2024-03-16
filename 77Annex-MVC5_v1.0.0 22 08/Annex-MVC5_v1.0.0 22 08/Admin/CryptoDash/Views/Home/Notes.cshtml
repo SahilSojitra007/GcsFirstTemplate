@@ -1,0 +1,218 @@
+﻿@model IEnumerable<BusinessLibrary.Table.cls_x_CustInq_First_Step_Disp>
+@{
+    ViewBag.Title = "Notes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<button type="button" class="close" style="margin-top:55px; margin-right:15px" onclick="location.href='@Url.Action("quotationdetail","home")'">×</button>
+<!-- DataTables -->
+<link href="~/assets/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+<link href="~/assets/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+<!-- Responsive datatable examples -->
+<link href="~/assets/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+<!--bootstrap css-->
+<link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/assets/css/style.css" rel="stylesheet" />
+<h5 style="margin-top:0px; margin-left:12px">Qutation Entry  Detail  <i class="ion-arrow-left-a"></i> Notes</h5>
+<input type="button" value="Back" style="margin-top:10px; margin-left:15px" class="btn btn-outline-primary" onclick="location.href='@Url.Action("quotationdetail","home")'" />
+
+<div class="container-fluid">
+    <div class="alert alert-dark" role="alert" style="margin-top:20px">
+        <h1 align="center">Notes</h1>
+    </div>
+    <hr />
+    <div class="container">
+        <form name="myform" class="form-group">
+            <div class="row">
+                <div class="col-sm-5 ">
+                    <div class="form-group">
+                        <label>Notes:</label>
+                        <select class="form-control">
+                            <option>英文备注</option>
+                            <option>英文备注-dark sky</option>
+                            <option>Eurofase 包年</option>
+                            <option>ETL繁体备注-未税-普通</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-1" style="margin-top:31px">
+                    <input type="number" class="form-control" />
+                </div>
+                <div class="col-sm-6" style="margin-top:31px">
+                    <label class="form-control" style="background-color:orange">Template</label>
+                </div>
+            </div>
+        </form>
+    </div>
+    <hr />
+
+    <div class="container-fluid" style="margin-top:30px">
+        <div class="row">
+            <div class="col-12">
+                <div class="card m-b-30">
+                    <div class="card-body">
+                        <table id="datatable" class="table  table-striped table-responsive table-bordered" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Selection</th>
+                                    <th>Title</th>
+                                    <th>Remark</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td><input type="checkbox"></td>
+                                    <td>Project Process</td>
+                                    <td>
+                                        1.Project will be initiated after necessary cost, samples and information are received. During project is in process, we may still need some information to close project.  If any necessary information is delayed, the project may not be closed on time.
+                                        2.If your submittal is changed after the project is opened, the project lead time would be revised.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td><input type="checkbox"></td>
+                                    <td>Cost</td>
+                                    <td>
+                                        1.If your submittal is changed after the project is opened, the project cost would be revised.
+                                        2.Any cost in this quotation excluded certification body’s (such as UL, ETL, or CSA) manufacturer inspection fee, annual fee or label fee.
+                                        3.The quotation is based on an assumption that all components are UL, ETL or CSA approval units with appropriate ratings.
+                                        4.The quotation does not come into effect without our company sales stamp.
+                                        5.Our company will keep your project content in confidential.
+                                        6.The quotation shall not be revealed or copied to anyone without our permission.
+                                        7.The quotation doesn’t include Remittance costs.
+                                        8.The quotation doesn’t include tax.
+                                        9.This quotation doesn’t include annual unlisted component fee, Label fee, Annual fee, Factory Inspection fee, Travel fee, Freight fee, Customs duty, customs clearance fee and other follow-up costs.
+                                        10.If there is any change in the data provided for testing and evaluation, the cost may be increased or decreased according to the tested sample.
+                                        11.The quotation is based on just paperwork and does not include any tests.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><input type="checkbox"></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="form-floating">
+                    <label>Remark:</label>
+                    <textarea class="form-control" id="floatingTextarea"></textarea>
+                </div>
+            </div>
+            <div class="col-sm-1" align="center" style="margin-top:30px ">
+                <input type="button" value="Close" class="btn btn-outline-danger" />
+            </div>
+            <div class="col-sm-5" align-item="left">
+                <label>Save As Remark:</label>
+                <select class="form-control">
+                    <option>英文备注</option>
+                    <option>英文备注-dark sky</option>
+                    <option>Eurofase 包年</option>
+                    <option>ETL繁体备注-未税-普通</option>
+                </select>
+            </div>
+            <div class="col-sm-1" style="margin-top:30px">
+                <input type="number" class="form-control" />
+            </div>
+            <div class="col-sm-6" align="left" style="margin-top:15px">
+                <input type="button" style="width:100px" value="Save" class="btn btn-success" />
+                <input type="button" style="width:100px" value="Delate" class="btn btn-danger" />
+            </div>
+            <div class="col-sm-6" align="left" style="margin-top:15px">
+                <input type="button" style="width:150px" value="+/- Master" class="btn btn-secondary" />
+                <input type="button" style="width:150px" value="Save As Master  " class="btn btn-secondary" />
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+
+    @section scripts{
+        var popup,dataTable;
+
+        <!-- Required datatable js -->
+        <script src="~/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="~/assets/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+        <!-- Buttons examples -->
+        <script src="~/assets/plugins/datatables/dataTables.buttons.min.js"></script>
+        <script src="~/assets/plugins/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="~/assets/plugins/datatables/jszip.min.js"></script>
+        <script src="~/assets/plugins/datatables/pdfmake.min.js"></script>
+        <script src="~/assets/plugins/datatables/vfs_fonts.js"></script>
+        <script src="~/assets/plugins/datatables/buttons.html5.min.js"></script>
+        <script src="~/assets/plugins/datatables/buttons.print.min.js"></script>
+        <script src="~/assets/plugins/datatables/buttons.colVis.min.js"></script>
+        <!-- Responsive examples -->
+        <script src="~/assets/plugins/datatables/dataTables.responsive.min.js"></script>
+        <script src="~/assets/plugins/datatables/responsive.bootstrap4.min.js"></script>
+
+        <!-- Datatable init js -->
+        <script src="~/assets/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="~/assets/js/app.js"></script>
+        @*todo 22 05 14*@
+        <script src="~/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+        <link href="~/assets/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+
+        @*todo 22 05 14*@
+        <script>
+        var Popup, dataTable;
+
+        //$(document).ready(function () {
+        //    dataTable = $("employeeTable").Datatable({
+        //        "ajax": {
+        //            "url": "/Employee/GetData",
+        //            "type": "GET",
+        //            "datatype": "json"
+        //        },
+        //        "columns": [
+        //            { "data": "Name" }
+        //        ],
+        //        "language": {
+        //            "emptyTable": "No data found"
+        //        }
+        //    });
+        //});
+
+        //$(document).ready(function () {
+        //    $('#dialog').dialog({
+        //        autoOpen: true,
+        //    });
+        //});
+
+        function PopupForm(url) {
+            //alert(url);
+            var formDiv = $('<div/>');
+            //alert(formDiv);
+            $.get(url)
+            .done(function (response) {
+                formDiv.html(response);
+
+                Popup = formDiv.dialog({
+                    autoOpen: true,
+                    resizable: false,
+                    title: 'Fill Employee Details',
+                    height: 750,
+                    width: 1200,
+                    close: function () {
+                        Popup.dialog('destroy').remove()
+                    }
+                });
+            });
+        }
+
+        </script>
+    }

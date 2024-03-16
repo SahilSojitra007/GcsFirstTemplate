@@ -1,0 +1,371 @@
+﻿@model BusinessLibrary.Table.cls_x_CustInq_First_Step_Disp
+@{
+    ViewBag.Title = "addoredit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<button type="button" class="close" style="margin-top:55px; margin-right:15px" onclick="location.href='@Url.Action("mywallet","home")'">×</button>
+<link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/assets/css/style.css" rel="stylesheet" />
+
+@using (Html.BeginForm("AddOrEdit", "Home", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.TrnNo)
+
+    <h5 style="margin-top:0px; margin-left:13px">Quotation <i class="ion-arrow-right-a"></i> Qutation Entry  Detail</h5>
+    <input type="button" value="Back" style="margin-top:10px; margin-left:15px" class="btn btn-outline-primary" onclick="location.href='@Url.Action("mywallet", "home")'" />
+
+    <div class="container-fluid">
+        <div class="alert alert-dark" role="alertdialog" style="margin-top:20px">
+            <h1 align="center"><b>Quotation</b></h1>
+        </div>
+        <hr />
+        <div class="container">
+            <form name="myform" class="form-group">
+                <div class="row">
+                    <div class="col-sm-6 ">
+                        <div class="form-group">
+                            <label>Trn.No:</label>
+                            <input type="password" class="form-control " id="exampleInputPassword2">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+
+                        <label>Language:</label>
+                        <select class="form-control">
+                            <option>English</option>
+                            <option>Simplified Chinese</option>
+                            <option>Traditional Chinese</option>
+                        </select>
+
+                    </div>
+                    <div class="col-sm-6">
+                        <label>Date:</label>
+                        <input type="date" class="form-control" value="2011-08-19" id="example-date-input">
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label>Project#:</label>
+                        <input type="number" name="project" class="form-control" />
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label>Customer:</label>
+                        <input type="password" class="form-control" id="exampleInputPassword2">
+                    </div>
+
+                    <div class="col-sm-6" align="center" style="margin-top:25px">
+                        <h4>Quotation Status</h4>
+                    </div>
+
+                    <div class="col-sm-6" align="center" style="margin-top:10px">
+                        <input type="button" style="width:200px" value="Add Customer" class="btn btn-outline-primary" />
+                        <input type="button" style="width:200px" value="Quote Link" class="btn btn-outline-primary" />
+                    </div>
+
+                    <div class="custom-control custom-checkbox col-sm-6" align="center">
+
+                        <input type="checkbox" class="custom-control-input" checked="" id="customCheck3" data-parsley-multiple="groups" data-parsley-mincheck="2">
+                        <label class="custom-control-label" for="customCheck3">Opened</label>
+
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label>Sales Person:</label>
+                        <select class="form-control">
+                            <option>Elena</option>
+                            <option>Rose</option>
+                            <option>CECI</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <label>Sign Back Date:</label>
+                        <input class="form-control" type="date" value="2020-05-16" id="example-date-input">
+                    </div>
+                    <div class="col-sm-6">
+                        <label>Owner:</label>
+                        <input type="text" name="name" class="form-control" />
+                    </div>
+                    <div class="col-sm-6">
+                        <label>Closed Date:</label>
+                        <input class="form-control" type="date" value="2011-05-17" id="example-date-input">
+                    </div>
+                    <div class="col-sm-6">
+                        <label>Currency:</label>
+                        <div class="currency">
+                            <select class="form-control">
+                                <option>RMB</option>
+                                <option>NTD</option>
+                                <option>EUR</option>
+                                <option>HKD</option>
+                                <option>INR</option>
+                                <option>JPY</option>
+                                <option>THB</option>
+                                <option>USD</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label>Reason/Remark:</label>
+                        <input type="text" class="form-control ml-1-20" id="exampleInputPassword2">
+                    </div>
+                    <div class="col-sm-6" align="center" style="margin-top:10px">
+                        <input type="button" style="width:300px" value="Currency Rate Table" class="btn btn-outline-info" />
+                    </div>
+                </div>
+            </form>
+        </div>
+        <hr />
+
+
+
+        <div class="container-fluid" style="margin-top:30px;overflow: auto;">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <table id="datatable" class="table  table-striped table-responsive table-bordered" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Trn.No</th>
+                                        <th>sel</th>
+                                        <th>Quotation</th>
+                                        <th>date</th>
+                                        <th>certificate</th>
+                                        <th>attention</th>
+                                        <th>product name</th>
+                                        <th>product no</th>
+                                        <th>report no</th>
+                                        <th>amount</th>
+                                        <th>certificate type standard</th>
+                                        <th>remark</th>
+                                    </tr>
+                                </thead>
+
+
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td><input type="checkbox"></td>
+                                        <td>45256261</td>
+                                        <td>14/5/2020</td>
+                                        <td>500.00</td>
+                                        <td>  </td>
+
+                                        <td>
+                                            revice report
+                                            (2515863210486736)
+                                        </td>
+                                        <td>LPL26, LPP20, LRB20, LRB30112</td>
+                                        <td>XXX69</td>
+                                        <td>650.00</td>
+                                        <td>
+                                            0:UL 1838 & CSA C22.2 No.250.7
+                                            0.0000   0
+                                        </td>
+                                        <td></td>
+                                        <td><input type="button" value="detail" class="btn btn-outline-primary" onclick="location.href='@Url.Action("quotationdetail","home")'" /></td>                                         
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td><input type="checkbox"></td>
+                                        <td>22020201</td>
+                                        <td>02/02/2022</td>
+                                        <td>1.00</td>
+                                        <td>  </td>
+
+                                        <td>Fixed Luminaires*13</td>
+                                        <td>LPL26, LAAPP20, LRB20, LRB3087112</td>
+                                        <td>RRR007</td>
+                                        <td>650.00</td>
+                                        <td>
+                                            0:1111 ,1234 ,1111    0.0000   00
+                                        </td>
+                                        <td></td>
+                                        <td><input type="button" value="detail" class="btn btn-outline-primary" onclick="location.href='@Url.Action("quotationdetail","home")'" /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+
+
+
+        <div class="container">
+            <form name="myform" class="form-group">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <label>Remark:</label>
+                            <textarea class="form-control" id="floatingTextarea"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6" align-item="left">
+
+                        <label>Language:</label>
+                        <select class="form-control">
+                            <option>English</option>
+                            <option>Simplified Chinese</option>
+                            <option>Traditional Chinese</option>
+                        </select>
+
+                    </div>
+                    <div class="col-sm-6" align="center" style="margin-top:25px ">
+                        <h4>Advanced</h4>
+                    </div>
+                    <div class="col-sm-6" align="center" style="margin-top:15px">
+                        <input type="button" style="width:200px" value="Invoice/Voucher" class="btn btn-secondary" />
+                        <input type="button" style="width:200px" value="Tran.Permission" class="btn btn-secondary" />
+                    </div>
+
+                    <div class="col-sm-5">
+                        <label>Account:</label>
+                        <select class="form-control">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-1" style="margin-top:30px">
+                        <input type="number" class="form-control" />
+                    </div>
+                    <div class="col-sm-3">
+                        <label>Certificate Agency Fees:</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="col-sm-3">
+                        <label>Amount:</label>
+                        <input type="text" class="form-control" />
+                    </div>
+
+                    <div class="col-sm-4" style="margin-top:25px">
+                        <label>Date:</label>
+                        <input type="date" class="form-control" />
+                    </div>
+
+                    <div class="col-sm-2" style="margin-top:55px">
+                        <input type="button" value="Attach Slip/Image" class="btn btn-outline-warning" />
+                    </div>
+
+                    <div class="col-sm-6" align="center" style="margin-top:60px">
+                        <input type="button" style="width:200px" value="Unlock" class="btn btn-outline-primary" />
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Amount:</label>
+                        <input class="form-control" type="text" />
+                    </div>
+                    <div class="col-sm-2" style="margin-top:32px">
+                        <input type="button" style="width:153px" value="Receive" class="btn btn-outline-success" />
+                    </div>
+
+                    <div class="col-sm-6" style="margin-top:30px" align="center">
+                        <input type="button" style="width:60px" value="|<<" class="btn btn-secondary" />
+                        <input type="button" style="width:60px" value="<<" class="btn btn-secondary" />
+                        <input type="button" style="width:60px" value=">>" class="btn btn-secondary" />
+                        <input type="button" style="width:60px" value=">>|" class="btn btn-secondary" />
+                    </div>
+                    <div class="col-sm-6" style="margin-top:20px" align="center">
+                        <input type="button" style="width:130px" value="Previous User" class="btn btn-link" />
+                        <input type="button" style="width:130px" value="Admin" class="btn btn-link" />
+                        <input type="button" style="width:130px" value="Current User" class="btn btn-link" />
+                        <input type="button" style="width:130px" value="Admin" class="btn btn-link" />
+                    </div>
+                    <div class="col-sm-6" style="margin-top:15px" align="center">
+                        <input type="button" style="width:100px" value="Print" class="btn btn-warning" />
+                        <input type="button" style="width:100px" value="Update" class="btn btn-primary" />
+                        <input type="button" style="width:100px" value="Save" class="btn btn-success" />
+                        <input type="button" style="width:100px" value="Delate" class="btn btn-danger" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <hr />
+
+    @section scripts{
+        var popup,dataTable;
+
+        <!-- Required datatable js -->
+        <script src="~/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="~/assets/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+        <!-- Buttons examples -->
+        <script src="~/assets/plugins/datatables/dataTables.buttons.min.js"></script>
+        <script src="~/assets/plugins/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="~/assets/plugins/datatables/jszip.min.js"></script>
+        <script src="~/assets/plugins/datatables/pdfmake.min.js"></script>
+        <script src="~/assets/plugins/datatables/vfs_fonts.js"></script>
+        <script src="~/assets/plugins/datatables/buttons.html5.min.js"></script>
+        <script src="~/assets/plugins/datatables/buttons.print.min.js"></script>
+        <script src="~/assets/plugins/datatables/buttons.colVis.min.js"></script>
+        <!-- Responsive examples -->
+        <script src="~/assets/plugins/datatables/dataTables.responsive.min.js"></script>
+        <script src="~/assets/plugins/datatables/responsive.bootstrap4.min.js"></script>
+
+        <!-- Datatable init js -->
+        <script src="~/assets/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="~/assets/js/app.js"></script>
+        @*todo 22 05 14*@
+        <script src="~/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+        <link href="~/assets/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+
+        @*todo 22 05 14*@
+        <script>
+        var Popup, dataTable;
+
+        //$(document).ready(function () {
+        //    dataTable = $("employeeTable").Datatable({
+        //        "ajax": {
+        //            "url": "/Employee/GetData",
+        //            "type": "GET",
+        //            "datatype": "json"
+        //        },
+        //        "columns": [
+        //            { "data": "Name" }
+        //        ],
+        //        "language": {
+        //            "emptyTable": "No data found"
+        //        }
+        //    });
+        //});
+
+        //$(document).ready(function () {
+        //    $('#dialog').dialog({
+        //        autoOpen: true,
+        //    });
+        //});
+
+        function PopupForm(url) {
+            //alert(url);
+            var formDiv = $('<div/>');
+            //alert(formDiv);
+            $.get(url)
+            .done(function (response) {
+                formDiv.html(response);
+
+                Popup = formDiv.dialog({
+                    autoOpen: true,
+                    resizable: false,
+                    title: 'Fill Employee Details',
+                    height: 750,
+                    width: 1200,
+                    close: function () {
+                        Popup.dialog('destroy').remove()
+                    }
+                });
+            });
+        }
+
+        </script>
+    }
+
+
+}
+

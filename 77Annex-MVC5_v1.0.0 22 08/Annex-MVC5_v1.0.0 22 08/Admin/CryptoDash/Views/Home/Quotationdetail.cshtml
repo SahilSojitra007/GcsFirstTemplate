@@ -1,0 +1,381 @@
+﻿@model IEnumerable<BusinessLibrary.Table.cls_x_CustInq_First_Step_Disp>
+@{
+    ViewBag.Title = "quotationdetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+                        
+
+<button type="button" class="close" style="margin-top:55px; margin-right:15px" onclick="location.href='@Url.Action("mywallet","home")'">×</button>
+
+<!-- DataTables -->
+<link href="~/assets/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+<link href="~/assets/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+<!-- Responsive datatable examples -->
+<link href="~/assets/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+<!--bootstrap css-->
+<link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/assets/css/style.css" rel="stylesheet" />
+<h5 style="margin-top:0px; margin-left:12px">Qutation Entry  Detail  <i class="ion-arrow-right-a"></i>  1.Notes &amp; 2.Follow Up Cost</h5>
+<input type="button" value="Back" style="margin-top:10px; margin-left:15px" class="btn btn-outline-primary" onclick="location.href='@Url.Action("mywallet", "home")'" />
+
+<div class="container-fluid">
+    <div class="alert alert-dark" role="alert" style="margin-top:20px">
+        <h1 align="center">Quotation Entry Detail</h1>
+    </div>
+</div>
+<hr />
+
+<div class="container">
+    <form name="myform" class="form-group">
+        <div class="row">
+            <div class="col-sm-6 ">
+                <div class="form-group">
+                    <label>Date:</label>
+                    <input type="date" class="form-control " id="exampleInputdate">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <label>Product Name:</label>
+                <select class="form-control">
+                    <option>Revise Report(210900384TPE-001)</option>
+                    <option>Indoor LED Fixture Lamp</option>
+                    <option>室内DC LED 固定式灯具*2+室内DC LED 移动式灯具*7</option>
+                </select>
+
+            </div>
+            <div class="col-sm-1" style="margin-top:31px">
+                <input type="number" class="form-control" />
+            </div>
+            <div class="col-sm-2" style="margin-top:31px">
+                <select class="form-control">
+                    <option>English</option>
+                    <option>Simplified Chinese</option>
+                    <option>Traditional Chinese</option>
+                </select>
+            </div>
+            <div class="col-sm-3">
+                <label>Certificate Agency Fees:</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="col-sm-2">
+                <label>Currency:</label>
+                <div class="currency">
+                    <select class="form-control">
+                        <option>RMB</option>
+                        <option>NTD</option>
+                        <option>EUR</option>
+                        <option>HKD</option>
+                        <option>INR</option>
+                        <option>JPY</option>
+                        <option>THB</option>
+                        <option>USD</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-1" style="margin-top:31px">
+                <input type="text" class="form-control" />
+            </div>
+
+            <div class="col-sm-4">
+                <label>Model No:</label>
+                <input type="number" name="project" class="form-control" />
+            </div>
+            <div class="col-sm-2" style="margin-top:31px">
+                <select class="form-control">
+                    <option>YES</option>
+                    <option>NO</option>
+                </select>
+            </div>
+            <div class="col-sm-5">
+                <label>Attention:</label>
+                <select class="form-control">
+                    <option>charles vigna</option>
+                    <option>marry rose</option>
+                    <option>elvin xeiong</option>
+                </select>
+            </div>
+            <div class="col-sm-1" style="margin-top:31px">
+                <input type="text" class="form-control" />
+            </div>
+            <div class="col-sm-4">
+                <label>Report No:</label>
+                <input type="number" class="form-control" />
+            </div>
+            <div class="col-sm-2" style="margin-top:31px">
+                <select class="form-control">
+                    <option>YES</option>
+                    <option>NO</option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <label>Quotation No:</label>
+                <input type="number" class="form-control" />
+            </div>
+            <div class="col-sm-2" style="margin-top:32px">
+                <input type="button" style="width:160px" value="Get" class="btn btn-outline-primary" />
+            </div>
+            <div class="col-sm-6">
+                <label>Remark:</label>
+                <textarea class="form-control" id="floatingTextarea"></textarea>
+            </div>
+
+            <div class="col-sm-6">
+                <label>Ammount:</label>
+                <input type="text" class="form-control" />
+            </div>
+        </div>
+    </form>
+</div>
+<hr />
+
+<div class="container-fluid" style="margin-top:30px;">
+    <div class="row">
+        <div class="col-12">
+            <div class="card m-b-30">
+                <div class="card-body">
+                    <h4 align="center">Certificate</h4>
+                    <table id="datatable" class="table table-striped table-responsive table-bordered" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Certificate Type</th>
+                                <th>Image</th>
+                                <th>Standard No</th>
+                                <th>..</th>
+                                <th>Standard Name</th>
+                                <th>Product Name</th>
+                                <th>..</th>
+                                <th>Amount</th>
+                                <th>Currency</th>
+                                <th>Merge(?)</th>
+                                <th>Lead time</th>
+                                <th>certi Body</th>
+                                <th>..</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+
+
+                        <tbody>
+                            <tr>
+                                <td>ETL&CETL</td>
+                                <td>img</td>
+                                <td>UL 1838 & CSA C22.2 No.250.7</td>
+                                <td>..</td>
+                                <td>Outdoor Garden Lamp</td>
+                                <td></td>
+                                <td>..</td>
+                                <td>650.00</td>
+                                <td>USD</td>
+                                <td></td>
+                                <td>About 2-3 Weeks</td>
+                                <td>1 HKD 12.0</td>
+                                <td>..</td>
+                                <td><input type="button" value="delete" class="btn btn-outline-danger"></td>
+                            </tr>
+                            <tr>
+                                <td>ETL&CETL</td>
+                                <td>img</td>
+                                <td>UL 1838 & CSA C22.2 No.250.7</td>
+                                <td>..</td>
+                                <td>Fixture Luminaires</td>
+                                <td>仅增加等同型号名到报告170500042TWN-001 中同时需做标准更新</td>
+                                <td>..</td>
+                                <td>6570.00</td>
+                                <td>RBM</td>
+                                <td></td>
+                                <td>约2-3周</td>
+                                <td></td>
+                                <td>..</td>
+                                <td><input type="button" value="delete" class="btn btn-outline-danger"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card m-b-30">
+                <div class="card-body">
+
+                    <h5 align="center">Remark</h5>
+                    <table class="table table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Remark</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Project Process</th>
+                                <td>1.Project will be initiated after necessary cost.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Cost</th>
+                                <td>1.If your submittal is changed after the project is opened.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <input type="button" value="Notes" onclick="location.href='@Url.Action("Notes","home")'" class="btn btn-outline-info" />
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card m-b-30">
+                <div class="card-body">
+
+                    <h5 align="center">Follow Up</h5>
+                    <table class="table table-responsive table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Prize(USD)</th>
+                                <th>Frequency</th>
+                                <th>Remark</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">(A) Initial Factory Inspection Fee</th>
+                                <td>478+Travel Expense</td>
+                                <td>This fee is only incurred when applying for a new ETL control number</td>
+                                <td>Please see (E) for travel expenses</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">(B) Quarterly Certification Fee</th>
+                                <td>350*4</td>
+                                <td>Once per quarter</td>
+                                <td>NA</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">(C) Quarterly Follow-up Factory Inspection Fee</th>
+                                <td>324*12+Travel expense</td>
+                                <td>Once per quarter</td>
+                                <td>Please see item (E) for travel expenses</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">(D) Annual Direct Label Imprint Fee</th>
+                                <td>650*4</td>
+                                <td>Once per year</td>
+                                <td>NA</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">(E) Travel expense</th>
+                                <td>50*4</td>
+                                <td>Generated during each factory inspection</td>
+                                <td>This fee is the minimum fee</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <input type="button" value="Follow Up Cost" onclick="location.href='@Url.Action("FollowUp","home")'" class="btn btn-outline-info" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+
+
+
+<div class="container">
+    <form name="myform" class="form-group">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-floating">
+                    <label>Prepay:</label>
+                    <input type="text" class="form-control" id="prepay" />
+                </div>
+            </div>
+            <div class="col-sm-12" style="margin-top:35px" align="center">
+                <input type="button" value="Layout" style="width:200px" class="btn btn-secondary btn-lg" />
+                <input type="button" style="width:200px" value="Clear" class="btn btn-warning btn-lg" />
+                <input type="button" style="width:200px" value="Close" class="btn btn-danger btn-lg" />
+                <input type="button" style="width:200px" value="Ok" class="btn btn-success btn-lg" />
+            </div>
+        </div>
+    </form>
+</div>
+<hr />
+
+@section scripts{
+    var popup,dataTable;
+
+    <!-- Required datatable js -->
+    <script src="~/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/assets/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Buttons examples -->
+    <script src="~/assets/plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="~/assets/plugins/datatables/buttons.bootstrap4.min.js"></script>
+    <script src="~/assets/plugins/datatables/jszip.min.js"></script>
+    <script src="~/assets/plugins/datatables/pdfmake.min.js"></script>
+    <script src="~/assets/plugins/datatables/vfs_fonts.js"></script>
+    <script src="~/assets/plugins/datatables/buttons.html5.min.js"></script>
+    <script src="~/assets/plugins/datatables/buttons.print.min.js"></script>
+    <script src="~/assets/plugins/datatables/buttons.colVis.min.js"></script>
+    <!-- Responsive examples -->
+    <script src="~/assets/plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="~/assets/plugins/datatables/responsive.bootstrap4.min.js"></script>
+
+    <!-- Datatable init js -->
+    <script src="~/assets/pages/datatables.init.js"></script>
+
+    <!-- App js -->
+    <script src="~/assets/js/app.js"></script>
+    @*todo 22 05 14*@
+    <script src="~/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <link href="~/assets/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+
+    @*todo 22 05 14*@
+    <script>
+        var Popup, dataTable;
+
+        //$(document).ready(function () {
+        //    dataTable = $("employeeTable").Datatable({
+        //        "ajax": {
+        //            "url": "/Employee/GetData",
+        //            "type": "GET",
+        //            "datatype": "json"
+        //        },
+        //        "columns": [
+        //            { "data": "Name" }
+        //        ],
+        //        "language": {
+        //            "emptyTable": "No data found"
+        //        }
+        //    });
+        //});
+
+        //$(document).ready(function () {
+        //    $('#dialog').dialog({
+        //        autoOpen: true,
+        //    });
+        //});
+
+        function PopupForm(url) {
+            //alert(url);
+            var formDiv = $('<div/>');
+            //alert(formDiv);
+            $.get(url)
+            .done(function (response) {
+                formDiv.html(response);
+
+                Popup = formDiv.dialog({
+                    autoOpen: true,
+                    resizable: false,
+                    title: 'Fill Employee Details',
+                    height: 750,
+                    width: 1200,
+                    close: function () {
+                        Popup.dialog('destroy').remove()
+                    }
+                });
+            });
+        }
+
+    </script>
+}

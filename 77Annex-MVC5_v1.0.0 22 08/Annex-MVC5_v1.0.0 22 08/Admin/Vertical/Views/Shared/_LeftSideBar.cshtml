@@ -1,0 +1,141 @@
+﻿<div class="left side-menu">
+    <button type="button" class="button-menu-mobile button-menu-mobile-topbar open-left waves-effect">
+        <i class="ion-close"></i>
+    </button>
+
+    <!-- LOGO -->
+    <div class="topbar-left">
+        <div class="text-center">
+            <a href="@Url.Action("Index", "Dashboard")" class="logo"><i class="mdi mdi-assistant"></i> Annex</a>
+        </div>
+    </div>
+
+    <div class="sidebar-inner slimscrollleft">
+
+        <div id="sidebar-menu">
+            <ul>
+                <li class="menu-title">Main</li>
+
+                <li>
+                    <a href="@Url.Action("Index", "Dashboard")" class="waves-effect">
+                        <i class="mdi mdi-airplay"></i>
+                        <span> Dashboard <span class="badge badge-pill badge-primary float-right">7</span></span>
+                    </a>
+                </li>
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i> <span> Advanced UI </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="@Url.Action("advanced-highlight", "Advanced")">Highlight</a></li>
+                        <li><a href="@Url.Action("advanced-rating", "Advanced")">Rating</a></li>
+                        <li><a href="@Url.Action("advanced-alertify", "Advanced")">Alertify</a></li>
+                        <li><a href="@Url.Action("advanced-rangeslider", "Advanced")">Range Slider</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="@Url.Action("calendar", "Dashboard")" class="waves-effect"><i class="mdi mdi-calendar-clock"></i><span> Calendar </span></a>
+                </li>
+
+                <li class="menu-title">Components</li>
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-bullseye"></i> <span> UI Elements </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="@Url.Action("ui-buttons", "UI")">Buttons</a></li>
+                        <li><a href="@Url.Action("ui-cards", "UI")">Cards</a></li>
+                        <li><a href="@Url.Action("ui-tabs-accordions", "UI")">Tabs &amp; Accordions</a></li>
+                        <li><a href="@Url.Action("ui-modals", "UI")">Modals</a></li>
+                        <li><a href="@Url.Action("ui-images", "UI")">Images</a></li>
+                        <li><a href="@Url.Action("ui-alerts", "UI")">Alerts</a></li>
+                        <li><a href="@Url.Action("ui-progressbars", "UI")">Progress Bars</a></li>
+                        <li><a href="@Url.Action("ui-dropdowns", "UI")">Dropdowns</a></li>
+                        <li><a href="@Url.Action("ui-lightbox", "UI")">Lightbox</a></li>
+                        <li><a href="@Url.Action("ui-navs", "UI")">Navs</a></li>
+                        <li><a href="@Url.Action("ui-pagination", "UI")">Pagination</a></li>
+                        <li><a href="@Url.Action("ui-popover-tooltips", "UI")">Popover & Tooltips</a></li>
+                        <li><a href="@Url.Action("ui-badge", "UI")">Badge</a></li>
+                        <li><a href="@Url.Action("ui-carousel", "UI")">Carousel</a></li>
+                        <li><a href="@Url.Action("ui-video", "UI")">Video</a></li>
+                        <li><a href="@Url.Action("ui-typography", "UI")">Typography</a></li>
+                        <li><a href="@Url.Action("ui-sweet-alert", "UI")">Sweet-Alert</a></li>
+                        <li><a href="@Url.Action("ui-grid", "UI")">Grid</a></li>
+                    </ul>
+                </li>
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-clipboard-outline"></i><span> Forms </span> <span class="badge badge-pill badge-info float-right">8</span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="@Url.Action("form-elements", "Form")">Form Elements</a></li>
+                        <li><a href="@Url.Action("form-validation", "Form")">Form Validation</a></li>
+                        <li><a href="@Url.Action("form-advanced", "Form")">Form Advanced</a></li>
+                        <li><a href="@Url.Action("form-editors", "Form")">Form Editors</a></li>
+                        <li><a href="@Url.Action("form-uploads", "Form")">Form File Upload</a></li>
+                        <li><a href="@Url.Action("form-mask", "Form")">Form Mask</a></li>
+                        <li><a href="@Url.Action("form-summernote", "Form")">Summernote</a></li>
+                        <li><a href="@Url.Action("form-xeditable", "Form")">Form Xeditable</a></li>
+                    </ul>
+                </li>
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-gauge"></i><span> Charts </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="@Url.Action("charts-morris", "Charts")">Morris Chart</a></li>
+                        <li><a href="@Url.Action("charts-chartist", "Charts")">Chartist Chart</a></li>
+                        <li><a href="@Url.Action("charts-chartjs", "Charts")">Chartjs Chart</a></li>
+                        <li><a href="@Url.Action("charts-flot", "Charts")">Flot Chart</a></li>
+                        <li><a href="@Url.Action("charts-c3", "Charts")">C3 Chart</a></li>
+                        <li><a href="@Url.Action("charts-other", "Charts")">Jquery Knob Chart</a></li>
+                    </ul>
+                </li>
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-cards-outline"></i> <span> Icons </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="@Url.Action("icons-material", "Icons")">Material Design</a></li>
+                        <li><a href="@Url.Action("icons-ion", "Icons")">Ion Icons</a></li>
+                        <li><a href="@Url.Action("icons-fontawesome", "Icons")">Font Awesome</a></li>
+                        <li><a href="@Url.Action("icons-themify", "Icons")">Themify Icons</a></li>
+                        <li><a href="@Url.Action("icons-dripicons", "Icons")">Dripicons</a></li>
+                        <li><a href="@Url.Action("icons-typicons", "Icons")">Typicons Icons</a></li>
+                    </ul>
+                </li>
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-table"></i><span> Tables </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="@Url.Action("tables-basic", "Tables")">Basic Tables</a></li>
+                        <li><a href="@Url.Action("tables-datatable", "Tables")">Data Table</a></li>
+                        <li><a href="@Url.Action("tables-responsive", "Tables")">Responsive Table</a></li>
+                        <li><a href="@Url.Action("tables-editable", "Tables")">Editable Table</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-title">Extra</li>
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-map-marker-multiple"></i><span> Maps </span> <span class="badge badge-pill badge-danger float-right">2</span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="@Url.Action("maps-google", "Maps")"> Google Map</a></li>
+                        <li><a href="@Url.Action("maps-vector", "Maps")"> Vector Map</a></li>
+                    </ul>
+                </li>
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-google-pages"></i><span> Pages </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="@Url.Action("pages-login", "Pages")">Login</a></li>
+                        <li><a href="@Url.Action("pages-register", "Pages")">Register</a></li>
+                        <li><a href="@Url.Action("pages-recoverpw", "Pages")">Recover Password</a></li>
+                        <li><a href="@Url.Action("pages-lock-screen", "Pages")">Lock Screen</a></li>
+                        <li><a href="@Url.Action("pages-blank", "Pages")">Blank Page</a></li>
+                        <li><a href="@Url.Action("pages-404", "Pages")">Error 404</a></li>
+                        <li><a href="@Url.Action("pages-500", "Pages")">Error 500</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div> <!-- end sidebarinner -->
+</div>
